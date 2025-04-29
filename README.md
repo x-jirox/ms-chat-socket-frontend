@@ -17,10 +17,13 @@ Este proyecto es una aplicación de chat en tiempo real desarrollada con Angular
 
 ## Instalación
 
-1. Clona el repositorio:
+1. Clona el repositorio frontend:
 
    ```bash
-   git clone https://github.com/tu-usuario/angular-socket-chat.git
-   cd angular-socket-chat
+   git clone https://github.com/x-jirox/ms-chat-socket-frontend.git
    ```
+1. Clona el repositorio backend:
 
+   ```bash
+   git clone https://github.com/x-jirox/ms-chat-socket-backend.git
+   ```
