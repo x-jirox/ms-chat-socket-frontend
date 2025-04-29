@@ -1,23 +1,23 @@
 <div class="chat-container">
-    <div class="chat-header">
-      <h2>Chat</h2>
+  <div class="chat-header">
+    <h2>Chat</h2>
+  </div>
+
+  <div class="chat-messages">
+    <div *ngIf="messageList.length === 0" class="empty-message">
+      Envía tu primer mensaje
     </div>
-  
-    <div class="chat-messages">
-      <div class="message sent">
-        ¡Hola! ¿Todo bien?
-      </div>
-      <div class="message received">
-        ¡Todo perfecto! ¿Y tú?
-      </div>
-      <div class="message sent">
-        Feliz programando. 🔥
-      </div>
-    </div>
-  
-    <div class="chat-input-area" (click)="sendMessage()">
-      <input type="text" placeholder="Escribe algo bonito..." />
-      <button type="button">➤</button>
+
+    <div class="message" *ngFor="let item of messageList" [ngClass]="{
+        'recibido': item.message_side === 'received',
+        'enviado': item.message_side === 'sent'
+      }">
+      {{ item.message }}
     </div>
   </div>
-  
+
+  <div class="chat-input-area">
+    <input type="text" placeholder="Escribe algo bonito..." [(ngModel)]="messageInput" />
+    <button type="button" (click)="sendMessage()">➤</button>
+  </div>
+</div>
